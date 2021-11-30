@@ -1,0 +1,5 @@
+V1.0.1
+- fixed issue: now also stores phasing info for hg19 genes 
+V1.0.2
+- fixed issue: now stores phasing info in main object of the script and exports it to phasing info table
+- fixed typo in "success" file (created if the script ran successfully)
