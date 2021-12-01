@@ -1,15 +1,16 @@
+## this is TOP-ART calculator main Rscript
 version <- "1.0.2"
-
+## important options and frequently used packages are loaded globally
 options(readr.num_columns = 0)
 options(warn=-1)
-
 suppressPackageStartupMessages(require(tidyverse))
 suppressPackageStartupMessages(require(getopt))
 suppressPackageStartupMessages(require(vcfR))
 suppressPackageStartupMessages(require(crayon))
 suppressPackageStartupMessages(require(stringi))
 suppressPackageStartupMessages(require(feather))
-
+## all input parameters taken from the bash console are processed here and 
+## stored in the main options list-variable
 spec <-
   matrix(
     c("charger_file",       "a", 1, "character",
@@ -34,8 +35,6 @@ spec <-
     byrow = TRUE )
 opt <- getopt(spec)
 opt$version <- version
-
+## the required functions are loaded and the main method is started
 source(opt$functions)
-#source("/home/m168r/projects/top-art-study/TopArtCalculator/fncts.R")
-#calculate_topart_score(opt)
 main(opt)
